@@ -18,7 +18,7 @@ const Notes = ({notes}) => {
            notes.map((note) => <NoteItems key={note.id} note={note} />)
         }
     </div>
-     <Link className='btn add__btn'><FaPlus /></Link>
+     <Link to='/creat-notes' className='btn add__btn'><FaPlus /></Link>
    </section>
   )
 }

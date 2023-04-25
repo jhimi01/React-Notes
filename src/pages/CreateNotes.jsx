@@ -1,19 +1,24 @@
 import React, { useState } from "react";
 import { FaAngleLeft } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import {v4 as uuid} from "uuid";
+import useCreateDate from "../component/useCreateDate";
 
-const CreateNotes = () => {
+const CreateNotes = ({setNotes}) => {
 
     const [title, setTitles] = useState('')
     const [details, setDetails] = useState('')
+    const date = useCreateDate();
+    const navigate  = useNavigate();
 
     const handlesubmit=(e)=>{
         e.preventDefault();
 
         if (title && details) {
-         const note = { id: uuid(), title, details}
-         console.log(note)
+         const note = { id: uuid(), title, details, date}
+         setNotes(prevNote => [note, ...prevNote])
+        //  console.log(note)
+        navigate('/')
         }
     }
 
