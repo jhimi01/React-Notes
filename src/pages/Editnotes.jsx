@@ -30,6 +30,14 @@ const Editnotes = ({notes, setNotes}) => {
 
   }
 
+  const handledelet =()=>{
+    const newnotes = notes.filter(item => item.id !== id)
+    setNotes(newnotes)
+    navigate('/')
+  }
+
+
+
 
   return (
     <section>
@@ -38,7 +46,7 @@ const Editnotes = ({notes, setNotes}) => {
           <FaAngleLeft />
         </Link>
         <button onClick={handleform} className="btn lg primary">save</button>
-        <button className="btn danger"><FaRegTrashAlt /></button>
+        <button onClick={handledelet} className="btn danger"><FaRegTrashAlt /></button>
       </header>
       <form onSubmit={handleform} className="create-note__form">
         <input type="text" placeholder="Title" value={title} onChange={(e) => setTitle(e.target.value)}/>
