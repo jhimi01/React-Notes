@@ -8,7 +8,7 @@ import Editnotes from './pages/Editnotes';
 const App = () => {
 
     const [notes, setNotes] = useState(JSON.parse(localStorage.getItem('notes')) || [])
-    console.log(notes)
+    // console.log(notes)
 
     useEffect(()=>{
     localStorage.setItem('notes', JSON.stringify(notes))
@@ -20,7 +20,7 @@ const App = () => {
         <Routes>
             <Route path='/' element={<Notes  notes={notes} />}/>
             <Route path='/creat-notes' element={<CreateNotes setNotes={setNotes}/>}/>
-            <Route path='/edit-note/:id' element= {<Editnotes />} />
+            <Route path='/edit-note/:id' element= {<Editnotes notes={notes} setNotes={setNotes} />} />
         </Routes>
        </BrowserRouter>
        </main>
