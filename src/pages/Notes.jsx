@@ -1,5 +1,8 @@
 import React from 'react';
-import { FaSearch } from 'react-icons/fa';
+import { FaSearch, FaPlus } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
+import NoteItems from '../component/NoteItems';
+import notes from '../dummy_notes';
 
 const Notes = () => {
   return (
@@ -9,6 +12,13 @@ const Notes = () => {
         {/* <input type="text" autoFocus placeholder='keywords...' /> */}
         <button className='btn'><FaSearch/></button>
     </header>
+    
+    <div className="notes__container">
+        {
+           notes.map((note) => <NoteItems key={note.id} note={note} />)
+        }
+    </div>
+     <Link className='btn add__btn'><FaPlus /></Link>
    </section>
   )
 }

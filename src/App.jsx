@@ -6,13 +6,15 @@ import Editnotes from './pages/Editnotes';
 
 const App = () => {
     return (
-       <BrowserRouter>
+       <main id='app'>
+        <BrowserRouter>
         <Routes>
             <Route path='/' element={<Notes />}/>
             <Route path='/creat-notes' element={<CreateNotes />}/>
             <Route path='/edit-note/:id' element= {<Editnotes />} />
         </Routes>
        </BrowserRouter>
+       </main>
     );
 };
 
