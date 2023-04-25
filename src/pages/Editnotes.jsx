@@ -1,5 +1,5 @@
 import React from "react";
-import { FaAngleLeft } from "react-icons/fa";
+import { FaAngleLeft, FaRegTrashAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Editnotes = () => {
@@ -10,7 +10,7 @@ const Editnotes = () => {
           <FaAngleLeft />
         </Link>
         <button className="btn lg primary">save</button>
-        <button className="btn danger">Delete</button>
+        <button className="btn danger"><FaRegTrashAlt /></button>
       </header>
       <form className="create-note__form">
         <input type="text" placeholder="Title" />
