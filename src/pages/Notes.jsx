@@ -2,9 +2,9 @@ import React from 'react';
 import { FaSearch, FaPlus } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import NoteItems from '../component/NoteItems';
-import notes from '../dummy_notes';
 
-const Notes = () => {
+
+const Notes = ({notes}) => {
   return (
    <section>
     <header className="notes__header">
